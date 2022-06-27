@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!-- process.html -->
+<!-- Authors: Terrie-Ann Broomfield, Xin Wen, Peggy Wong -->
+<!-- Date Created: Apr 05, 2022 -->
+<!-- Date Modified: Apr 21, 2022 -->
+<!-- GEOM 99 Group Project Development Activity Tracker -->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel ="icon" type="Image/png" href="img/nobkgd_5in.png">
+        <title>Process &#45; Development Activity Tracker &#124; Fleming Flamingos</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <!-- Navigation Bar -->
+        <nav>
+            <input id="nav-toggle" type="checkbox">
+            <div class="logo"><strong>Fleming Flamingos</strong></div>
+			<ul class="links">
+				<li><a href="index.html">Home</a><li>
+				<li><a href="problemdefinition.html">Problem Definition</a><li>
+				<li><a href="methodology.html">Methodology</a><li>
+                <li><a href="process.html">Process</a><li>
+				<li><a href="solutions.html">Solutions</a><li>
+				<li><a href="about.html">About</a><li>
+			</ul>
+			<label for="nav-toggle" class="icon-burger">
+			</label>
+        </nav>
+        <div class="container"> 
+            <img class="banner" src="img/banner.jpg" alt="Home Page Banner">
+        </div>
+        <!-- Main Content -->
+        <main>
+            <!-- Process -->
+            <section>
+                <h1>Process</h1>
+                <p>We have spent 5 weeks developing this project. During the first week, we discussed the possible topics and web solutions to create a problem statement. As we were ambitious in delivering web solutions for a real-world client, our initial topic was a survey tracker for a land surveying company. However, we were not able generate effective web solutions due to the quality of the dataset (which required a significant amount of processing). After this week of exploration and consulting with the instructor, we were able to finalize the topic and set goals for our project in Week 12. We decided to explore the web technologies that will be used in our collaborative project, which are ArcGIS Web Map, ArcGIS Dashboards, ArcGIS Experience Builder, and ArcGIS StoryMaps. We worked on and finalized the web solutions before the Week 13 lab, and the documentation before the Week 14 lab.</p>
+            </section>
+            <!-- Challenges -->
+            <section>
+                <h1>Challenges</h1>
+                <p>A number of technical challenges and limitations were identified during the implementation process: </p>
+                <p>• ArcGIS Web Map does not have too much flexibility in clustering configuration. For example, the map cannot be zoomed when clicking on the clusters, and the individual features cannot be displayed in large map scale. As a result, it is a challenge to visualize the development activities within the city effectively. To solve this problem, various symbology and clustering configurations were explored to find out the best way to visualize the development activities.</p>
+                <p>• Although the ArcGIS Dashboard has the Selector feature to filter the map results based on attributes, this option is not available in the web map. However, the users can use the Filter option to enter an expression and query the data.</p>
+                <p>• Due to the size of the data, sometimes it may take a while for the contents to load. Unfortunately, the developers have no control over the loading speed of the web solutions, so the users may need to be more patient.</p>
+		<p>• The timelapse filter was to be included among the applications to enhance the user experience, by allowing them to view the development applications in a given period of time by simply dragging the filter bar to the specified date or pressing the play button to journey through the years. Due to the time constraints, the bugs in the code could not be solved to run the application successfully. The link is provided for viewing and critiquing purposes.</p>
+		<p><a href=timelapse.html>Click to view Development Activity Tracker Timelapse</a></p>
+            </section>
+            <!-- Future Possibilities -->
+            <section>
+                <h1>Future Possibilities</h1>
+                <p>The web solutions will be enhanced further in the next couple months for our collaborative project with the City of Toronto. The future possibilities of enhancement include: </p>
+                <p>• To enhance the design and the content of the web solutions based on the client's feedback.</p>
+                <p>• To enhance the pop-up configuration by preventing fields with null values from showing up in the pop-ups using Arcade.</p>
+                <p>• To automate the updating process of data using ArcGIS API for Python, as the development application data is updated on a monthly basis.</p>
+            </section>
+        </main>
+        <!-- Footer -->
+        <footer>
+            <p id="footer">Copyright &#169; 2022 Fleming Flamingos. All Rights Reserved.</p>
+        </footer>
+    </body>
+</html>

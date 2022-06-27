@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!-- methodology.html -->
+<!-- Authors: Terrie-Ann Broomfield, Xin Wen, Peggy Wong -->
+<!-- Date Created: Apr 05, 2022 -->
+<!-- Date Modified: Apr 21, 2022 -->
+<!-- GEOM 99 Group Project Development Activity Tracker -->
+<html lang="en">
+        <!-- Xin Wen April 12-->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="Image/png" href="img/nobkgd_5in.png">
+        <title>Methodology &#45; Development Activity Tracker &#124; Fleming Flamingos</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <!-- Xin Wen April 12-->
+        <!-- Navigation Bar -->
+        <nav>
+            <input id="nav-toggle" type="checkbox">
+            <div class="logo"><strong>Fleming Flamingos</strong></div>
+			<ul class="links">
+				<li><a href="index.html">Home</a><li>
+				<li><a href="problemdefinition.html">Problem Definition</a><li>
+				<li><a href="methodology.html">Methodology</a><li>
+                <li><a href="process.html">Process</a><li>
+				<li><a href="solutions.html">Solutions</a><li>
+				<li><a href="about.html">About</a><li>
+			</ul>
+			<label for="nav-toggle" class="icon-burger">
+			</label>
+        </nav>
+        <!--Xin Wen April 19-->
+         <!--banner under fixed nav bar v1.0-->
+        <div class="container"> 
+            <img class="banner" src="img/banner.jpg" alt="Home Page Banner">
+        </div>
+        <!-- End of Xin Wen April 12-->
+        <!-- Main Content -->
+        <main>
+             <!-- Methodology
+                  Terrie April 19, 2022-->
+            <section>
+                <h1>Methodology</h1>
+                <p>In order to visualize the development activities in the City of Toronto, ArcGIS Web Map, ArcGIS Dashboards, ArcGIS Experience Builder, and ArcGIS StoryMaps were ultilized.</p>
+                <h2>Data Pre-Processing</h2>
+                <p>The Development Applications dataset (.csv) and the city boundary (.shp) can be downloaded from the City of Toronto Open Data Portal. As the development application dataset has the X and Y coordinates in MTM projection, it was converted to latitude and longitude using the XY Table to Point tool in ArcGIS Pro. After creating the point features for the development application, the data was published to ArcGIS Online as hosted feature layers.</p>
+                <h2>ArcGIS Web Map</h2>
+                <p>The main component of this project is the web map created through ArcGIS Online, which is the basis of the other web solutions. After downloading the Development Applications dataset (.csv) and the city boundary (.shp) from the City of Toronto Open Data Portal, the data was added to the ArcGIS Online and published as hosted feature layers. The hosted feature layers were then added to the web map, and several features have been configured in order to visualize the locations of development activity.</p>
+                <p>• <b>Base map</b> is set to Topographic to emphasize the locations of the development activity while showing the context such as neighbourhood and street names.</p>
+                <p>• <b>Legend</b> is displayed to help the users to understand the symbology of the application type, the number of features, and the city boundary.</p>
+                <p>• <b>Symbology</b> is set for both the development application and the city boundary. A color palette with low transparency is used to visualize different development application types, and a dark grey solid line is used to visualize the city boundary.</p>
+                <p>• <b>Pop-ups</b> are configured to show descriptive information about the individual applications effectively. Instead of using the original table showing all fields, the field attributes are utilized and only related information will be organized and displayed in the pop-ups.</p>
+                <p>• <b>Clustering</b> is an effective way to visualize high number of point features. The clustering radius is set to the maximum to minimize the number of clusters in the map. The size range of the clustering is set from 10% to 50% depends on the number of applications. Labels are added to display the number of applications in the area. Pop-ups are also configured to display the number of application and the most common application type in the area. The size of the cluster is based on the number of applications in the area, and the color of the cluster is based on the most common application type in the area.</p>
+                <img class="solutions" src="img/methodology-webmap.jpg" alt="ArcGIS Web Map">
+                <h2>ArcGIS Dashboards</h2>
+                <p>To create an interactive dashboard and convey useful statistics to the users efficiently, several elements were utilized besides the embedded web map.</p>
+                <p>• <b>Indicator</b> displays the count of the applications in Toronto, or the count of the specific application type in the current map extent.</p>
+                <p>• <b>List</b> shows the recent applications that were submitted this month. The users can zoom the map to the corresponding application location by clicking on the specific application, and the corresponding pop-up will be displayed automatically as well.</p>
+                <p>• <b>Serial Chart</b> visualizes the monthly application volume since 2008 to show the development trend in Toronto. Its scroll bar allows the users to display the application volume in the specific date range.</p>
+                <p>• <b>Selector (Single)</b> in the header allows the users to select the specific application based on the application number or the reference file number. Once the application is selected, the users can zoom the map to the corresponding application location, and the corresponding pop-up will be displayed automatically as well.</p>
+                <p>• <b>Selector (Multiple)</b> in the collapsed sidebar allows the users to filter the applications based on the submission date range, postal code, application status, or application type. Only the applications that satisfy the search criteria will be displayed on the map.</p>
+                <p>All actions should be set only after all elements have been added to the dashboard, as the newly added elements will not be affected by the actions set previously.</p>
+                <img class="solutions" src="img/methodology-dashboard.jpg" alt="ArcGIS Dashboards">
+                <h2>ArcGIS Experience Builder</h2>
+                <!-- Experience Builder Content -->
+                <p>ArcGIS Experience Builder allows you to quickly transform your data into compelling web app. It is highly interactive that users are able to use search, filter, sort, export data and so many more. It is also mobile friendly, that the content can be displayed in either fixed or scrolling screens, on single or multiple pages. The built in map functions including basemap, zoom, navigation, scale bar, and full screen. </p>
+                <p>• <b>Filter</b> Filter allows you to select Development Applications by types. You can choose from CO, CD, MW, OZ, PL, SA, SB and TLAB, and hit apply.</p>
+                <p>• <b>Search</b> Search Applications by typing the Application Type, or Application ID. </p>
+                <p>• <b>List</b> List all the Application sorted by Application Types.</p>
+                <p>• <b>Legend</b> Allows you to see features in the map. It displays the symbols followed by Applycation Types. There are 3 legend layers, Application Type, Number of features, City of Toronto boundary. You can view different legend by clicking on the switch button.</p>
+                <p>• <b>Map</b> Display Toronto boundary by default.</p>
+
+                <img class="solutions" src="img/methodology-experiencebuilder.jpg" alt="ArcGIS Dashboards">
+                <h2>ArcGIS StoryMaps</h2>
+                <p>To tell a remarkable story about the development activities in Toronto, the ArcGIS StoryMaps is used. The main goal of the story map is to educate the public by providing background information about the map. The web map and the dashboard are embedded within the story map, so that the users can explore the development activities interactively within the story map. The unique elements of the story map include: </p>
+                <p>• <b>Navigation Bar</b> is pinned at the top of the story map, allowing the users to jump between different sections and obtain the information they want in a second.</p>
+                <p>• <b>Video</b> from YouTube is embedded in the story map in order to share more information about the development in Toronto. Embedded video is an effective way to tell a story and it keeps the users to stay on the story map longer.</p>
+                <p>• <b>Slideshow (Beta)</b> provides basic information about different development application types. The users can click through the slides to learn about different development application types, or skip to the next section if they are not interested.</p>
+                <p>• <b>Button</b> points the users to the City of Toronto website for more information about the development activities.</p>
+                <p>The navigation bar and the slideshow (beta) are shown in the screenshot below: </p>
+                <img class="solutions" src="img/methodology-storymap.jpg" alt="ArcGIS StoryMaps">
+            </section>
+        </main>
+        <!-- Footer -->
+        <footer>
+            <p id="footer">Copyright &#169; 2022 Fleming Flamingos. All Rights Reserved.</p>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!-- solutions.html -->
+<!-- Authors: Terrie-Ann Broomfield, Xin Wen, Peggy Wong -->
+<!-- Date Created: Apr 05, 2022 -->
+<!-- Date Modified: Apr 21, 2022 -->
+<!-- GEOM 99 Group Project Development Activity Tracker -->
+<html lang="en">
+        <!-- Xin Wen April 12-->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="Image/png" href="img/nobkgd_5in.png">
+        <title>Solutions &#45; Development Activity Tracker &#124; Fleming Flamingos</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <!-- Xin Wen April 12-->
+        <!-- Navigation Bar -->
+        <nav>
+            <input id="nav-toggle" type="checkbox">
+            <div class="logo"><strong>Fleming Flamingos</strong></div>
+			<ul class="links">
+				<li><a href="index.html">Home</a><li>
+				<li><a href="problemdefinition.html">Problem Definition</a><li>
+				<li><a href="methodology.html">Methodology</a><li>
+                <li><a href="process.html">Process</a><li>
+				<li><a href="solutions.html">Solutions</a><li>
+				<li><a href="about.html">About</a><li>
+			</ul>
+			<label for="nav-toggle" class="icon-burger">
+			</label>
+        </nav>
+        <!--Xin Wen April 19-->
+         <!--banner under fixed nav bar v1.0-->
+        <div class="container"> 
+            <img class="banner" src="img/banner.jpg" alt="Home Page Banner">
+        </div>
+
+        <!-- Main Content -->
+        <!-- Tags: h1, h2, p -->
+        <main>
+            <!-- Solutions -->
+            <section>
+                <h1>Solutions</h1>
+                <p>The implemented solutions track and display the location, volume, type, and status of all development activities in the City of Toronto spatially and temporally. The goal is to considerably reduce the difficulties faced when searching for settlement sites in the area. The solutions implemented are outlined below.</p>
+            <!--Terrie April 19, 2022 -->
+                <h2>ArcGIS Web Map</h2>
+                <p><a href="https://fleming.maps.arcgis.com/apps/mapviewer/index.html?webmap=fe7a0d9a6afc45cbbeb8f1ae499286a0">https://fleming.maps.arcgis.com/apps/mapviewer/index.html?webmap=fe7a0d9a6afc45cbbeb8f1ae499286a0</a></p>
+                <p>The web map is the base on which all the other applications were based and forms the core of the project. The development activities are categorized into application types, active and closed, and sorted by date. It gives the user the ability to view all the development activities in the city of Toronto from 2008 to present, all in one place. It allows the user to view the location, type, status, and date of the application by clicking on any one and viewing the details in the pop-up window. The volume of these activities in a given radius is also displayed by grouping them into clusters on zoom. The Dashboard and Experience Builder were used to enhance the user experience to make the web map more interactive.</p>
+                <div class="pic">
+                    <a target="_blank" href="img/webmap.jpg"> 
+                        <img class="solutions" src="img/webmap.jpg" alt="ArcGIS Web Map">
+                    </a>
+                </div>
+                <h2>ArcGIS Dashboards</h2>
+                <p><a href="https://fleming.maps.arcgis.com/apps/dashboards/91e38f76024d4dea902137ae41fc2195">https://fleming.maps.arcgis.com/apps/dashboards/91e38f76024d4dea902137ae41fc2195</a></p>
+                <p>The dashboard allows the users to monitor various development activities in Toronto on a single screen. The web map is embedded which allows the users to explore the development activities interactively. A graph illustrating the development application counts in the previous years is displayed at the bottom of the dashboard, showing the development trends in Toronto. The scrollbar in the graph allows the users to explore the development pattern in a specifc date range. A list of recent applications and the total count for various development application types is updated based on the current map extent. By clicking on the recent application in the list, the map zooms in to the corresponding location, and a pop-up is displayed automatically.</p>
+                <div class="pic">
+                    <a target="_blank" href="img/dashboard.jpg"> 
+                        <img class="solutions" src="img/dashboard.jpg" alt="ArcGIS Dashboards">
+                    </a>
+                </div>
+                <h2>ArcGIS Experience Builder</h2>
+                <p><a href="https://experience.arcgis.com/experience/499362549fde45edb0f3b958060ac1c6">https://experience.arcgis.com/experience/499362549fde45edb0f3b958060ac1c6</a></p>
+                <p>The experience builder enhances the cartographic visualisation of the web map and gives the users a more interactive experience through an application. It allows you to create unique web experienve using flexible layouts, content, and widgets that interact with 2D and 3D data. Users can drag the content, and use tools to interact with the data. It is also mobile adaptive, can be displayed on either large screens or smal screens.</p>
+                <div class="pic">
+                    <a target="_blank" href="img/experiencebuilder.jpg">
+                        <img class="solutions" src="img/experiencebuilder.jpg" alt="ArcGIS Experience Builder">
+                    </a>
+                </div>
+                <h2>ArcGIS StoryMaps</h2>
+                <p><a href="https://storymaps.arcgis.com/stories/110e1015cfc8455590998a8050d1998b">https://storymaps.arcgis.com/stories/110e1015cfc8455590998a8050d1998b</a></p>
+                <p>The story map educates the public by providing background information of the development activities in Toronto. The navigation bar is pinned at the top of the page, allowing the users to jump between sections quickly and obtain the information they want. The slideshow feature is ultilized to provide information about different development application types. The web map and the dashboard are included in the story map, allowing the users to explore the development activities interactively within the story map.</p>
+                <div class="pic">
+                    <a target="_blank" href="img/storymap.jpg"> 
+                        <img class="solutions" src="img/storymap.jpg" alt="ArcGIS StoryMaps">
+                    </a>
+                </div>
+            </section>
+        </main>
+<!-- End of Xin Wen April 12-->
+        <!-- Footer -->
+        <footer>
+            <p id="footer">Copyright &#169; 2022 Fleming Flamingos. All Rights Reserved.</p>
+        </footer>
+    </body>
+</html>

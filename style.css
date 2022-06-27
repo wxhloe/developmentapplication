@@ -1,0 +1,318 @@
+/* style.css */
+/* Author: Terrie-Ann Broomfield, Xin Wen, Peggy Wong */
+/* Date Created: Apr 05, 2022 */
+/* Date Modified: Apr 21, 2022 */
+html, body {
+    background: #f0f0f0;
+    font-family: Helvetica, sans-serif;
+    height: 100%;
+    letter-spacing: 1px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.banner{
+  width: 100%;
+  max-width: 1920px;
+  height: auto;
+}
+main{
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+section{
+    padding-bottom: 20px;
+}
+h1{
+    color: #344458;
+    font-weight: 900;
+}
+h2{
+    color: #344458;
+    font-size: 1.3em;
+}
+p {
+    color: #4c6474;
+    line-height: 1.5;
+}
+footer {
+    background-color: #203448;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+#footer {
+    color: white;
+    font-size: 0.8em;
+}
+
+/*Xin Wen April 12*/
+/* nav bar v1.0*/
+/*
+  .topnav {
+    overflow: hidden;
+    background-color: rgb(1,42,74);
+  }
+  
+  .topnav a {
+    float: left;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 17px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left:auto;
+    color: white;
+    padding: 30px 36px;
+  }
+  
+  .topnav a:hover {
+    background-color: rgb(169,214,229);
+    color: white;
+  }
+  
+  .topnav a.active {
+      background-color:rgb(42,111,151);
+      color: white;
+  }
+  
+  .topnav .icon {
+    display: none;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .topnav a:not(:first-child) {display: none;}
+    .topnav a.icon {
+      float: right;
+      display: block;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .topnav.responsive {position: relative;}
+    .topnav.responsive .icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .topnav.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+  }
+  */
+  /*nav bar v1.0 archive*/
+  .center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .responsive{
+    max-width: 100%;
+    height:auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  header{
+    background-image: url("img/Toronto1.jpg");
+    background-position: center center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    height:auto;
+  }
+
+/* Solutions Page */
+.solutions{
+  width: 75%;
+  height: auto;
+}
+/*Terrie, April 20, 2022 - To give the images their dimensions and positions, animations and appearance*/
+div.pic {
+  margin: 5px;
+  width: 75%;
+  padding: 5px;
+}
+
+div.pic:hover {
+  border: 5px solid rgb(1,42,74);
+}
+
+div.pic img {
+  width: 100%;
+  
+}
+ div.pic img:hover {
+    transform: scaleX(+1);
+  }
+  div.pic img {
+  border-radius: 5px;
+}
+
+/* About Page */
+.team-member{
+  text-align: center;
+}
+.column{
+  float: left;
+  padding: 2%;
+  width: 29.33%;
+}
+.team-member:after{
+  clear: both;
+  content: "";
+  display: table;
+}
+@media screen and (max-width: 1200px) {
+  .column {
+    width: 100%;
+  }
+}
+.name{
+  font-weight: bold;
+}
+.profile-picture{
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+}
+
+.title{
+  font-style: italic;
+}
+
+/*Xin Wen April 19*/
+/* nav bar v1.1*/
+body {
+	padding: 0;
+	margin: 0;
+}
+
+nav {
+	position: fixed; /*can make it fixed, but will cover the banner*/
+	z-index: 10;
+	left: 0;
+	right: 0;
+	top: 0;
+	padding: 0 5%;
+	height: 100px;
+	background-color: rgb(1,42,74);
+}
+
+nav .logo {
+	float: left;
+	width: 40%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	font-size: 24px;
+	color: #fff;
+}
+
+nav .links {
+	float: right;
+	padding: 0;
+	margin: 0;
+	width: 40%;
+	height: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+nav .links li {
+	list-style: none;
+}
+
+nav .links a {
+	display:block;
+	padding: .5em; /*was 1em*/
+	font-size: 16px;
+	font-weight: bold;
+	color: #fff;
+	text-decoration: none;
+}
+
+#nav-toggle {
+	position: absolute;
+	top: -100px;
+}
+
+nav .icon-burger {
+	position: absolute;
+	display: none;
+	right: 5%;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+
+nav .icon-burger .line {
+	width: 30px;
+	height: 5px;
+	background-color: #fff;
+	margin: 5px;
+	border-radius: 3px;
+	transition: all .3s ease-in-out;
+  display: block;
+}
+	
+@media screen and (max-width: 1200px) {
+	nav .logo {
+		float: none;
+		width: auto;
+		justify-content: center;
+	}
+	nav .links{
+		float: none;
+		position: fixed;
+		z-index: 9;
+		left: 0;
+		right: 0;
+		top: 100px;
+		bottom: 100%;
+		width: auto;
+		height: auto;
+		flex-direction: column;
+		justify-content: space-evenly;
+		background-color: rgba(0,0,0,.8);
+		overflow: hidden;
+		transition: all .5s ease-in-out;
+	}
+	nav .links a{
+		font-size: 20px;
+	}
+	nav :checked ~ .links {
+		bottom: 0;
+	}
+	nav .icon-burger {
+		display: block;
+	}
+	nav :checked ~ .icon-burger .line:nth-child(1) {
+		transform: translateY(10px) rotate(225deg);
+	}
+	nav :checked ~ .icon-burger .line:nth-child(3) {
+		transform: translateY(-10px) rotate(-225deg);
+	}
+	nav :checked ~ .icon-burger .line:nth-child(2) {
+		opacity: 0;
+	}
+}
+/* end of nav bar*/		
+
+/*Xin Wen April 19*/
+/*banner v1.0*/
+.container {
+	position: relative;
+	margin-top: 100px;
+}
+.container img{
+  display: block;
+  width: 100%;
+}
+/* end of banner v1.0*/

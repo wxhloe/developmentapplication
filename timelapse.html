@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<!--Fleming Flamingos
+GEOM99 - Web GIS Development
+Development Activity Tracker - Timelapse
+Owner Terrie
+April 2022-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>Development Activity Tracker &#10072 Fleming Flamingos</title>
+<!--Inspiration conceptualized from Esri's Time Filter Series, retrieved from
+  https://developers.arcgis.com/documentation/mapping-apis-and-services/visualization/data-driven-styles/time/#time-series-filter-->
+    <link rel="stylesheet" href="https://js.arcgis.com/4.23//esri/themes/light/main.css" />
+    <script src="https://js.arcgis.com/4.23//"></script>
+
+    <style>
+      html,
+      body,
+      #viewDiv {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+      }
+
+      #timeSlider {
+        position: absolute;
+        left: 100px;
+        right: 100px;
+        bottom: 30px;
+      }
+    </style>
+
+    <script>
+      require([
+        "esri/config",
+        "esri/WebMap",
+        "esri/views/MapView",
+        "esri/layers/FeatureLayer",
+        "esri/widgets/Legend",
+        "esri/widgets/TimeSlider",
+        "esri/widgets/Expand"
+      ],(esriConfig,WebMap, MapView, FeatureLayer, Legend, TimeSlider, Expand)=> {
+
+        esriConfig.apiKey = "AAPK144901099bb043dfbb877d13892dd5a8eZ4jROWPVn4PetSl3bZSbSYZvYbtfB8yR57A_S69h9jrwH6GVvIj5NBLXtiQxh1n";
+
+        const year = 2021;
+
+        const renderer = {
+          type: "simple",
+          label: "Development Application location",
+          symbol: {
+            type: "picture-marker",
+            url: "https://flemingflamingos.github.io/geom99-group-project/img/marker.png",
+            height: 10,
+            width: 10
+          },
+          visualVariables: [{
+            type: "size",
+            field: "DATE SUBMITTED",
+            stops: [
+              { value: 2008, size: 5 },
+              { value: 2009, size: 6 },
+              { value: 2010, size: 7 },
+              { value: 2011, size: 8 },
+              { value: 2012, size: 9 },
+              { value: 2013, size: 10 },
+              { value: 2014, size: 11 },
+              { value: 2015, size: 12 },
+              { value: 2016, size: 13 },
+              { value: 2017, size: 14 },
+              { value: 2018, size: 15 },
+              { value: 2019, size: 16 },
+              { value: 2020, size: 17 },
+              { value: 2021, size: 20 },
+              { value: 2022, size: 25 }
+            ]
+          }]
+        };
+
+
+        const layer = new FeatureLayer({
+          title: `${year} APPLICATION TYPE`,
+          portalItem: {
+            id: "fff202767c8e4959b21c1e14fa95d83a"
+          },
+          renderer: renderer,
+          definitionExpression: `DATE SUBMITTED = ${year}`
+        });
+
+        const trackRenderer = {
+          type: "simple",
+          label: "Previous activity location",
+          symbol: {
+            type: "simple-marker",
+            color: "rgba(188,46,28,0.05)",
+            size: 4,
+            outline: null
+          },
+          visualVariables: [{
+            type: "size",
+            field: "DATE SUBMITTED",
+            legendOptions: {
+              showLegend: false
+            },
+            stops: [
+            { value: 2008, size: 5 },
+              { value: 2009, size: 6 },
+              { value: 2010, size: 7 },
+              { value: 2011, size: 8 },
+              { value: 2012, size: 9 },
+              { value: 2013, size: 10 },
+              { value: 2014, size: 11 },
+              { value: 2015, size: 12 },
+              { value: 2016, size: 13 },
+              { value: 2017, size: 14 },
+              { value: 2018, size: 15 },
+              { value: 2019, size: 16 },
+              { value: 2020, size: 17 },
+              { value: 2021, size: 20 },
+              { value: 2022, size: 25 }
+            ]
+          }]
+        };
+
+        const trackLayer = new FeatureLayer({
+          title: `${year} APPLICATION TYPE`,
+          portalItem: {
+            id: "fff202767c8e4959b21c1e14fa95d83a"
+          },
+          renderer: trackRenderer,
+          useViewTime: false,
+          definitionExpression: `DATE SUBMITTED = ${year}`
+        });
+        
+        const map = new WebMap({
+            portalItem: {
+              id: "fe7a0d9a6afc45cbbeb8f1ae499286a0"
+            },
+          layers: [ layer, trackLayer ]
+        });
+
+        const view = new MapView({
+          container: "viewDiv",
+          map: map,
+          center: [-79.40965134522666, 43.6858889067294], //Location (Long, Lat)
+          scale: 300000,
+          constraints: {
+            snapToZoom: false,
+            rotationEnabled: false
+          }
+        });
+
+        view.ui.add(new Expand({
+          content: new Legend({
+            view: view
+          }),
+          view: view,
+          expanded: false
+        }), "top-right");
+
+
+        const start = new Date(year-13, 0, 1);
+        const end = new Date(year+1, 11, 31);
+        const next = new Date(year-1, 9, 1, 7);
+        const timeSlider = new TimeSlider({
+          container: "timeSlider",
+          playRate: 500,
+          mode: "time-window",
+          fullTimeExtent: {
+            start,
+            end
+          },
+          timeExtent: {
+            start: start,
+            end: next
+          },
+          stops: {
+            interval: {
+              value: 1,
+              unit: "years"
+            }
+          },
+          view: view
+        });
+
+        view.ui.add(timeSlider, "manual");
+
+        view.whenLayerView(trackLayer).then((trackLayerView)=>{
+          trackLayerView.filter = {
+            timeExtent: {
+              start,
+              end: timeSlider.timeExtent.start
+            }
+          };
+
+          timeSlider.watch("timeExtent",(timeExtent)=>{
+            trackLayerView.filter = {
+              timeExtent: {
+                start,
+                end: timeSlider.timeExtent.start
+              }
+            }
+          });
+        });
+
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="viewDiv"></div>
+    <div id="timeSlider"></div>
+  </body>
+  <!--End Owner Terrie-->
+</html>
